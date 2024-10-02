@@ -5,8 +5,8 @@ title: "Life Expectancy and GDP per Capita"
 This page analyzes the relationship between life expectancy and GDP per capita using the Gapminder dataset. The dataset includes data on life expectancy, GDP per capita, and population for various countries over time.
 
 
-
 ```{python}
+
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
@@ -23,5 +23,5 @@ plt.xlabel('GDP per Capita (log scale)')
 plt.ylabel('Life Expectancy')
 plt.grid(True)
 plt.show()
-
+```
 

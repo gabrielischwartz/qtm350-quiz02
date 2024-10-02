@@ -36,3 +36,4 @@ axes[2].set_xlabel('Year')
 
 plt.tight_layout()
 plt.show()
+```
