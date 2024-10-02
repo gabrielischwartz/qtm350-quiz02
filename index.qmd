@@ -1,0 +1,14 @@
+---
+title: "Quiz02"
+---
+
+# Pages
+- [Home](index.qmd)
+- [Life Expectancy and GDP per Capita](life-gdp.qmd)
+- [Life Expectancy and Population](life-population.qmd)
+- [Time Analysis](country.qmd)
+
+
+
+# The Gapminder dataset provides data on global development, including life expectancy, GDP per capita, and population for various countries over time.
+

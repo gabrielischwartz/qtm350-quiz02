@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "create-dataset.html",
+    "href": "create-dataset.html",
+    "title": "Create the Gapminder dataset",
+    "section": "",
+    "text": "# Import necessary libraries\nimport pandas as pd\nfrom gapminder import gapminder\n\n# Rename 'lifeExp' to 'life_expectancy' and 'gdpPercap' to 'gdp_per_capita'\ngapminder = gapminder.rename(columns={'lifeExp': 'life_expectancy',\n                                      'pop': 'population_millions', \n                                      'gdpPercap': 'gdp_per_capita'})\n\n# Convert population to millions\ngapminder['population_millions'] = gapminder['population_millions'] / 1_000_000\n\n# Create a new pandas DataFrame from the modified gapminder data\ngapminder_df = pd.DataFrame(gapminder)\n\n# Save the DataFrame as a CSV file\ngapminder_df.to_csv('gapminder.csv', index=False)\n\n# Print the first 3 rows of the DataFrame\nprint(gapminder_df.head(3))\n\n       country continent  year  life_expectancy  population_millions  \\\n0  Afghanistan      Asia  1952           28.801             8.425333   \n1  Afghanistan      Asia  1957           30.332             9.240934   \n2  Afghanistan      Asia  1962           31.997            10.267083   \n\n   gdp_per_capita  \n0      779.445314  \n1      820.853030  \n2      853.100710"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "life-gdp.html",
+    "href": "life-gdp.html",
+    "title": "Life Expectancy and GDP per Capita",
+    "section": "",
+    "text": "This page analyzes the relationship between life expectancy and GDP per capita using the Gapminder dataset. The dataset includes data on life expectancy, GDP per capita, and population for various countries over time.\nimport matplotlib.pyplot as plt import seaborn as sns import pandas as pd\n\nLoad the Gapminder dataset\ndata = pd.read_csv(“gapminder.csv”)\n\n\nCreate the plot\nplt.figure(figsize=(10, 6)) sns.scatterplot(data=data, x=“gdp_per_capita”, y=“life_expectancy”, alpha=0.5) plt.xscale(‘log’) plt.title(‘Life Expectancy vs GDP per Capita’) plt.xlabel(‘GDP per Capita (log scale)’) plt.ylabel(‘Life Expectancy’) plt.grid(True) plt.show()"
+  },
+  {
+    "objectID": "country.html",
+    "href": "country.html",
+    "title": "Country Analysis",
+    "section": "",
+    "text": "Country Analysis\nThis analysis explores the changes in life expectancy, GDP per capita, and population for a specific country over time. The data is visualized to provide insights into the trends and patterns observed in these key indicators.\nimport matplotlib.pyplot as plt import seaborn as sns import pandas as pd import gapminder\n\n\nLoad the Gapminder dataset\ndata = pd.read_csv(“gapminder.csv”) # Filter data for a specific country, e.g., ‘United States’ country_data = data[data[‘country’] == ‘United States’]\n\n\nCreate subplots\nfig, axes = plt.subplots(3, 1, figsize=(10, 18), sharex=True)\n\n\nPlot life expectancy over time\nsns.lineplot(ax=axes[0], data=country_data, x=‘year’, y=‘life_expectancy’) axes[0].set_title(‘Life Expectancy Over Time’) axes[0].set_ylabel(‘Life Expectancy’)\n\n\nPlot GDP per capita over time\nsns.lineplot(ax=axes[1], data=country_data, x=‘year’, y=‘gdp_per_capita’) axes[1].set_title(‘GDP per Capita Over Time’) axes[1].set_ylabel(‘GDP per Capita’)\n\n\nPlot population over time\nsns.lineplot(ax=axes[2], data=country_data, x=‘year’, y=‘population_millions’) axes[2].set_title(‘Population Over Time’) axes[2].set_ylabel(‘Population’) axes[2].set_xlabel(‘Year’)\nplt.tight_layout() plt.show()"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Quiz02",
+    "section": "",
+    "text": "Pages\n\nHome\nLife Expectancy and GDP per Capita\nLife Expectancy and Population\nTime Analysis\n\n\n\nThe Gapminder dataset provides data on global development, including life expectancy, GDP per capita, and population for various countries over time."
+  },
+  {
+    "objectID": "life-population.html",
+    "href": "life-population.html",
+    "title": "Life Expectancy and Population",
+    "section": "",
+    "text": "Life Expectancy and Population\nThis page analyzes the relationship between life expectancy and population using the Gapminder dataset. The dataset includes data on life expectancy, GDP per capita, and population for various countries over time.\nimport matplotlib.pyplot as plt import seaborn as sns import pandas as pd\n\n\nLoad the Gapminder dataset\ndata = pd.read_csv(“gapminder.csv”) # Create the plot plt.figure(figsize=(10, 6)) sns.scatterplot(data=data, x=“population_millions”, y=“life_expectancy”, alpha=0.5) plt.xscale(‘log’) plt.title(‘Life Expectancy vs Population’) plt.xlabel(‘Population (log scale)’) plt.ylabel(‘Life Expectancy’) plt.grid(True) plt.show()"
+  }
+]
