@@ -2,8 +2,6 @@
 title: "Life Expectancy and Population"
 ---
 
-# Life Expectancy and Population
-
 This page analyzes the relationship between life expectancy and population using the Gapminder dataset. The dataset includes data on life expectancy, GDP per capita, and population for various countries over time.
 
 ```{python}
