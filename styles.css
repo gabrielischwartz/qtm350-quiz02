@@ -1,1 +1,6 @@
-/* css styles */
+h1 {
+    font-family: 'Cambria', sans-serif;
+    color:#2c3e50;
+    text-align: center;
+    margin-top: 20px;
+  }

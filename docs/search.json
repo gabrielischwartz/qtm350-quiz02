@@ -18,7 +18,7 @@
     "href": "life-gdp.html",
     "title": "Life Expectancy and GDP per Capita",
     "section": "",
-    "text": "This page analyzes the relationship between life expectancy and GDP per capita using the Gapminder dataset. The dataset includes data on life expectancy, GDP per capita, and population for various countries over time.\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nimport pandas as pd\n\n# Load the Gapminder dataset\ndata = pd.read_csv(\"gapminder.csv\")\n\n# Create the plot\nplt.figure(figsize=(10, 6))\nsns.scatterplot(data=data, x=\"gdp_per_capita\", y=\"life_expectancy\", alpha=0.5)\nplt.xscale('log')\nplt.title('Life Expectancy vs GDP per Capita')\nplt.xlabel('GDP per Capita (log scale)')\nplt.ylabel('Life Expectancy')\nplt.grid(True)\nplt.show()"
+    "text": "This page analyzes the relationship between life expectancy and GDP per capita using the Gapminder dataset. The dataset includes data on life expectancy, GDP per capita, and population for various countries over time.\n\nimport plotly.express as px\nimport pandas as pd\n\n# Load the Gapminder dataset\ndata = pd.read_csv(\"gapminder.csv\")\n\n# Create the interactive plot\nfig = px.scatter(data, x=\"gdp_per_capita\", y=\"life_expectancy\", \n                 log_x=True, title='Life Expectancy vs GDP per Capita',\n                 labels={'gdp_per_capita': 'GDP per Capita (log scale)', 'life_expectancy': 'Life Expectancy'},\n                 opacity=0.5)\n\n# Show the plot\nfig.show()"
   },
   {
     "objectID": "country.html",

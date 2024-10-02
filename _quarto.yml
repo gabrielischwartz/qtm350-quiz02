@@ -14,13 +14,15 @@ website:
         text: "Life Expectancy and Population"
       - href: country.qmd
         text: "Country Analysis"
-    
 
 format:
   html:
     theme: flatly
     css: styles.css
     toc: true
+
+
+
 
 
 
